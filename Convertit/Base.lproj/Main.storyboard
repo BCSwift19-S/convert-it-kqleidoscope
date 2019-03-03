@@ -26,6 +26,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="userInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="8KQ-cB-wMr"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osp-ZZ-Viz">
                                 <rect key="frame" x="295" y="40" width="103" height="24"/>
@@ -72,7 +75,7 @@
                                     <action selector="convertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kfF-c2-yb0"/>
                                 </connections>
                             </button>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kdW-Q9-KWA">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kdW-Q9-KWA">
                                 <rect key="frame" x="16" y="37" width="32" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="HYr-Ez-BYO"/>
@@ -83,6 +86,9 @@
                                     <segment title="-"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="signSegmentSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="oHL-L6-xDE"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eA8-ya-YpX">
                                 <rect key="frame" x="63" y="402" width="288.33333333333331" height="28"/>
@@ -102,6 +108,9 @@
                                             <segment title="none"/>
                                         </segments>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="decimalSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="BJ1-By-9jo"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -140,9 +149,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="decimalSegment" destination="lHS-lp-E5x" id="PVd-K3-dXc"/>
                         <outlet property="formulaPicker" destination="jyy-hg-HI3" id="Y0C-fS-D6G"/>
                         <outlet property="fromUnitsLabel" destination="Osp-ZZ-Viz" id="grP-st-ZaD"/>
                         <outlet property="resultsLabel" destination="PXh-XF-6xb" id="ZUz-5B-Lp7"/>
+                        <outlet property="signSegment" destination="kdW-Q9-KWA" id="Jf2-l3-BQc"/>
                         <outlet property="userInput" destination="U0a-nd-HNF" id="hUN-bW-ce4"/>
                     </connections>
                 </viewController>
